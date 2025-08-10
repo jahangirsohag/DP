@@ -59,7 +59,14 @@ int tab(vector<vector<int>> &mat, vector<vector<int>> &dp)
 		    dp[i][j] = max(max(diagonallyUp, diagonallyDown), right) + mat[i][j];
 		}
 	}
-	return dp[0][0];
+	int max = 0;
+	for(int i = 0; i < n; ++i)
+	{
+		if(dp[i][0] > max)
+		{
+			max = dp[i][0];
+		}
+	}
 }
 
 signed main() {
